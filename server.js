@@ -54,6 +54,14 @@ app.get('/book_dtls', (req, res) => {
   BookDetails.show_book_dtls(res, req.query.id);
 })
 
+app.get('/available', (_, res) => {
+    BooksStatus.show_all_books_status(res);
+})
+
+app.get('/authors', (_, res) => {
+    Authors.show_all_authors(res);
+})
+
 app.post('/newbook', (req, res) => {
     const familyName = req.body.familyName;
     const firstName = req.body.firstName;
